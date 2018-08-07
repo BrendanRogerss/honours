@@ -15,7 +15,8 @@ from rl.policy import LinearAnnealedPolicy, BoltzmannQPolicy, EpsGreedyQPolicy
 from rl.memory import SequentialMemory
 from rl.core import Processor
 from rl.callbacks import FileLogger, ModelIntervalCheckpoint
-
+import models
+import time
 
 INPUT_SHAPE = (84, 84)
 WINDOW_LENGTH = 4
@@ -41,9 +42,12 @@ class AtariProcessor(Processor):
         return np.clip(reward, -1., 1.)
 
 parser = argparse.ArgumentParser()
+parser.add_argument('--model', type=str, default='standard')
+parser.add_argument('--memory_size', type=int, default=1000)
+parser.add_argument('--env_name', type=str, default='Atlantis-v0')
 parser.add_argument('--mode', choices=['train', 'test'], default='train')
-parser.add_argument('--env-name', type=str, default='Pong-v0')
 parser.add_argument('--weights', type=str, default=None)
+
 args = parser.parse_args()
 
 # Get the environment and extract the number of actions.
@@ -54,31 +58,11 @@ nb_actions = env.action_space.n
 
 # Next, we build our model. We use the same model that was described by Mnih et al. (2015).
 input_shape = (WINDOW_LENGTH,) + INPUT_SHAPE
-model = Sequential()
-if K.image_dim_ordering() == 'tf':
-    # (width, height, channels)
-    model.add(Permute((2, 3, 1), input_shape=input_shape))
-elif K.image_dim_ordering() == 'th':
-    # (channels, width, height)
-    model.add(Permute((1, 2, 3), input_shape=input_shape))
-else:
-    raise RuntimeError('Unknown image_dim_ordering.')
-model.add(Convolution2D(32, 8, 8, subsample=(4, 4)))
-model.add(Activation('relu'))
-model.add(Convolution2D(64, 4, 4, subsample=(2, 2)))
-model.add(Activation('relu'))
-model.add(Convolution2D(64, 3, 3, subsample=(1, 1)))
-model.add(Activation('relu'))
-model.add(Flatten())
-model.add(Dense(512))
-model.add(Activation('relu'))
-model.add(Dense(nb_actions))
-model.add(Activation('linear'))
-print(model.summary())
+model = models.get_model(args.model, input_shape, nb_actions)
 
 # Finally, we configure and compile our agent. You can use every built-in Keras optimizer and
 # even the metrics!
-memory = SequentialMemory(limit=1000000, window_length=WINDOW_LENGTH)
+memory = SequentialMemory(limit=args.memory_size, window_length=WINDOW_LENGTH)
 processor = AtariProcessor()
 
 # Select a policy. We use eps-greedy action selection, which means that a random action is selected
@@ -101,23 +85,23 @@ dqn = DQNAgent(model=model, nb_actions=nb_actions, policy=policy, memory=memory,
 dqn.compile(Adam(lr=.00025), metrics=['mae'])
 
 if args.mode == 'train':
+    start_time = time.time()
     # Okay, now it's time to learn something! We capture the interrupt exception so that training
     # can be prematurely aborted. Notice that you can the built-in Keras callbacks!
-
-    weights_filename = 'dqn_{}_weights.h5f'.format(args.env_name)
-    checkpoint_weights_filename = 'dqn_' + args.env_name + '_weights_{step}.h5f'
-    log_filename = 'dqn_{}_log.json'.format(args.env_name)
-    callbacks = [ModelIntervalCheckpoint(checkpoint_weights_filename, interval=250000)]
-    callbacks += [FileLogger(log_filename, interval=100)]
-    dqn.fit(env, callbacks=callbacks, nb_steps=1750000, log_interval=10000)
-
+    name = "_{}_{}_{}".format(args.env_name, args.model, args.memory_size)
+    weights_filename = 'weights/weights{}.h5f'.format(name)
+    log_filename = 'data/data{}.json'.format(name)
+    callbacks = [ModelIntervalCheckpoint(weights_filename, interval=10000)]
+    callbacks += [FileLogger(log_filename, interval=10)]
+    dqn.fit(env, callbacks=callbacks, nb_steps=10000000, log_interval=10000, verbose=2)
     # After training is done, we save the final weights one more time.
     dqn.save_weights(weights_filename, overwrite=True)
-
+    end_time = time.time()
+    print(end_time-start_time)
     # Finally, evaluate our algorithm for 10 episodes.
     dqn.test(env, nb_episodes=10, visualize=False)
 elif args.mode == 'test':
-    weights_filename = 'dqn_{}_weights.h5f'.format(args.env_name)
+    weights_filename = 'data/dqn_{}_weights.h5f'.format(args.env_name)
     if args.weights:
         weights_filename = args.weights
     dqn.load_weights(weights_filename)
