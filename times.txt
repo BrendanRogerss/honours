@@ -1,0 +1,6 @@
+pong 100000 : 20336.070955753326
+pong 10000 : 19781.09464621544
+pong 1000 : 19149.44982767105
+
+Atlantis 1000 : 20656.038987874985 *note : was improving a lot when 3m steps reached
+Atlantis 10000 : 19093.435985565186 *note : was also improving alot when 3m steps reached
