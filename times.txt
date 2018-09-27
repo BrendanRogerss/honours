@@ -1,6 +1,24 @@
-pong 100000 : 20336.070955753326
-pong 10000 : 19781.09464621544
-pong 1000 : 19149.44982767105
+PongNoFrameskip-v4_1000:19149.44982767105
+PongNoFrameskip-v4_10000:19781.09464621544
+PongNoFrameskip-v4_100000:20336.070955753326
+AtlantisNoFrameskip-v4_1000:20656.038987874985
+AtlantisNoFrameskip-v4_10000:19093.435985565186
+AtlantisNoFrameskip-v4_100000:18232.870793819427
+StarGunnerNoFrameskip-v4_1000:17624.406675577164
+StarGunnerNoFrameskip-v4_10000:19352.336236715317
+StarGunnerNoFrameskip-v4_100000:19362.23753094673
+SpaceInvaderNoFrameskip-v4_1000:22756.534213781357
+SpaceInvaderNoFrameskip-v4_10000:21034.467635154724
+SpaceInvaderNoFrameskip-v4_100000:20125.750622987747
+VideoPinballNoFrameskip-v4_1000:22227.974167585373
+VideoPinballNoFrameskip-v4_10000:21080.09393310547
 
-Atlantis 1000 : 20656.038987874985 *note : was improving a lot when 3m steps reached
-Atlantis 10000 : 19093.435985565186 *note : was also improving alot when 3m steps reached
+CrazyClimberNoFrameskip-v4_1000:17906.830595970154
+CrazyClimberNoFrameskip-v4_10000:17719.533078432083
+CrazyClimberNoFrameskip-v4_100000:19255.017556667328
+GopherNoFrameskip-v4_1000:21260.866462945938
+GopherNoFrameskip-v4_10000:21254.68804860115
+
+RoadRunnerNoFrameskip-v4_1000:18283.798311948776
+RoadRunnerNoFrameskip-v4_10000:19452.111293792725
+
