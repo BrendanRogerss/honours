@@ -4,8 +4,8 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--env', type=int, default=0)
-    parser.add_argument('--buffer', type=int, default=0)
+    parser.add_argument('env', type=int, default=0)
+    parser.add_argument('buffer', type=int, default=0)
     args = parser.parse_args()
 
     buffers = [1000,10000,100000]
