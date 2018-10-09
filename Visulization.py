@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 
 
 def baseline_log(filename):
@@ -12,20 +13,49 @@ def baseline_log(filename):
     y = [float(i) for i in x]
     return y
 
-
-def baselineGraph():
-    y = baseline_log("logs/AtlantisNoFrameskip-v4_1000/monitor.csv")
+def baselineplot(file, avg):
+    y = baseline_log(file)
     y_avg = []
-    print(y)
-    for i in range(0, len(y), 10):
-        y_avg.append(sum(y[i:(i + 10)]) / 10)
-    x = [i for i in range(0, len(y_avg))]
+    # print(y)
+    for i in range(0, len(y), avg):
+        sumY = sum(y[i:(i + avg)])
+        if i + avg > len(y):
+            y_avg.append(sumY / (len(y) - i))
+        else:
+            y_avg.append(sumY / avg)
+    # print(y_avg)
+    x = [j for j in range(0, len(y_avg))]
 
-    plt.plot(x, y_avg)
+    return x, y_avg
+
+def baselineGraph(name, size, avg):
+    mpl.style.use("seaborn")
+
+
+
+    fileName = "logs/" + name + "NoFrameskip-v4_" + str(1000) + "/monitor.csv"
+    x, y_avg = baselineplot(fileName, avg)
+    plt.plot(x, y_avg, label="1000")
+
+    fileName = "logs/" + name + "NoFrameskip-v4_" + str(10000) + "/monitor.csv"
+    x, y_avg = baselineplot(fileName, avg)
+    plt.plot(x, y_avg, label="10000")
+
+    fileName = "logs/" + name + "NoFrameskip-v4_" + str(100000) + "/monitor.csv"
+    x, y_avg = baselineplot(fileName, avg)
+    plt.plot(x, y_avg, label="100000")
+
+    plt.legend()
+
     plt.ylabel('Reward')
-    plt.xlabel('Episode')
-    plt.title('Breakout, 264 units')
-    plt.show()
+    plt.xlabel('Episodes * '+str(avg))
+    plt.title(name)
+    #plt.show()
+    plt.savefig("graphs/"+name+".png")
+    plt.close()
 
-
-baselineGraph()
+sizes = [1000, 10000, 100000]
+#for size in sizes:
+names = ["Assault", "Atlantis", "BeamRider","CrazyClimber", "DemonAttack", "Gopher", "Kangaroo", "KungFuMaster", "Pong", "RoadRunner", "SpaceInvaders", "StarGunner", "VideoPinball"]
+for name in names:
+    baselineGraph(name, None, 100)
