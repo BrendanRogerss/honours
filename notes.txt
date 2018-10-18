@@ -1,0 +1,7 @@
+shit need to retrain:
+
+pong 1000
+pong 10000
+pong 100000
+
+atlantis 1000
