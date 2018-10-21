@@ -1,6 +1,6 @@
-names = ["Assault", "Atlantis", "BeamRider","CrazyClimber", "DemonAttack", "Gopher", "Kangaroo", "KungFuMaster", "Pong", "RoadRunner", "SpaceInvaders", "StarGunner", "VideoPinball"]
+#names = ["Assault", "Atlantis", "BeamRider","CrazyClimber", "DemonAttack", "Gopher", "Kangaroo", "KungFuMaster", "Pong", "RoadRunner", "SpaceInvaders", "StarGunner", "VideoPinball"]
 sizes = [1000,10000,100000]
-
+names = ["Atlantis","Pong"]
 output = ""
 for name in names:
     for size in sizes:

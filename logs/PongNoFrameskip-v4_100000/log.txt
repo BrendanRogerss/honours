@@ -1,0 +1,174 @@
+Logging to /home/brendan/PycharmProjects/honours/logs/PongNoFrameskip-v4_100000
+--------------------------------------
+| % time spent exploring  | 70       |
+| episodes                | 100      |
+| mean 100 episode reward | -20.4    |
+| steps                   | 90403    |
+--------------------------------------
+Saving model due to mean reward increase: None -> -20.3
+Saving model due to mean reward increase: -20.3 -> -20.2
+Saving model due to mean reward increase: -20.2 -> -20.1
+Saving model due to mean reward increase: -20.1 -> -20.0
+Saving model due to mean reward increase: -20.0 -> -19.9
+Saving model due to mean reward increase: -19.9 -> -19.8
+Saving model due to mean reward increase: -19.8 -> -19.6
+Saving model due to mean reward increase: -19.6 -> -19.5
+Saving model due to mean reward increase: -19.5 -> -19.2
+Saving model due to mean reward increase: -19.2 -> -19.0
+Saving model due to mean reward increase: -19.0 -> -18.7
+Saving model due to mean reward increase: -18.7 -> -18.4
+Saving model due to mean reward increase: -18.4 -> -18.1
+Saving model due to mean reward increase: -18.1 -> -17.8
+--------------------------------------
+| % time spent exploring  | 20       |
+| episodes                | 200      |
+| mean 100 episode reward | -17.6    |
+| steps                   | 239677   |
+--------------------------------------
+Saving model due to mean reward increase: -17.8 -> -17.6
+Saving model due to mean reward increase: -17.6 -> -17.4
+Saving model due to mean reward increase: -17.4 -> -17.2
+Saving model due to mean reward increase: -17.2 -> -16.8
+Saving model due to mean reward increase: -16.8 -> -16.6
+Saving model due to mean reward increase: -16.6 -> -16.4
+Saving model due to mean reward increase: -16.4 -> -16.2
+Saving model due to mean reward increase: -16.2 -> -15.8
+Saving model due to mean reward increase: -15.8 -> -15.5
+Saving model due to mean reward increase: -15.5 -> -15.3
+Saving model due to mean reward increase: -15.3 -> -15.0
+Saving model due to mean reward increase: -15.0 -> -14.6
+Saving model due to mean reward increase: -14.6 -> -14.4
+Saving model due to mean reward increase: -14.4 -> -14.0
+Saving model due to mean reward increase: -14.0 -> -13.8
+Saving model due to mean reward increase: -13.8 -> -13.4
+Saving model due to mean reward increase: -13.4 -> -12.7
+Saving model due to mean reward increase: -12.7 -> -11.9
+Saving model due to mean reward increase: -11.9 -> -11.2
+Saving model due to mean reward increase: -11.2 -> -10.5
+Saving model due to mean reward increase: -10.5 -> -9.2
+Saving model due to mean reward increase: -9.2 -> -7.5
+Saving model due to mean reward increase: -7.5 -> -5.9
+Saving model due to mean reward increase: -5.9 -> -3.8
+Saving model due to mean reward increase: -3.8 -> -2.5
+Saving model due to mean reward increase: -2.5 -> -0.5
+Saving model due to mean reward increase: -0.5 -> 1.3
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 300      |
+| mean 100 episode reward | 1.6      |
+| steps                   | 500277   |
+--------------------------------------
+Saving model due to mean reward increase: 1.3 -> 2.9
+Saving model due to mean reward increase: 2.9 -> 4.4
+Saving model due to mean reward increase: 4.4 -> 5.9
+Saving model due to mean reward increase: 5.9 -> 7.6
+Saving model due to mean reward increase: 7.6 -> 9.4
+Saving model due to mean reward increase: 9.4 -> 10.9
+Saving model due to mean reward increase: 10.9 -> 12.7
+Saving model due to mean reward increase: 12.7 -> 13.6
+Saving model due to mean reward increase: 13.6 -> 15.2
+Saving model due to mean reward increase: 15.2 -> 16.5
+Saving model due to mean reward increase: 16.5 -> 17.5
+Saving model due to mean reward increase: 17.5 -> 18.2
+Saving model due to mean reward increase: 18.2 -> 18.5
+Saving model due to mean reward increase: 18.5 -> 18.6
+Saving model due to mean reward increase: 18.6 -> 18.7
+Saving model due to mean reward increase: 18.7 -> 18.8
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 400      |
+| mean 100 episode reward | 18.8     |
+| steps                   | 685714   |
+--------------------------------------
+Saving model due to mean reward increase: 18.8 -> 18.9
+Saving model due to mean reward increase: 18.9 -> 19.1
+Saving model due to mean reward increase: 19.1 -> 19.2
+Saving model due to mean reward increase: 19.2 -> 19.3
+Saving model due to mean reward increase: 19.3 -> 19.5
+Saving model due to mean reward increase: 19.5 -> 19.6
+Saving model due to mean reward increase: 19.6 -> 19.7
+Saving model due to mean reward increase: 19.7 -> 19.8
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 500      |
+| mean 100 episode reward | 19.8     |
+| steps                   | 859653   |
+--------------------------------------
+Saving model due to mean reward increase: 19.8 -> 19.9
+Saving model due to mean reward increase: 19.9 -> 20.0
+Saving model due to mean reward increase: 20.0 -> 20.1
+Saving model due to mean reward increase: 20.1 -> 20.3
+Saving model due to mean reward increase: 20.3 -> 20.4
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 600      |
+| mean 100 episode reward | 20.2     |
+| steps                   | 1031734  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 700      |
+| mean 100 episode reward | 20.3     |
+| steps                   | 1201137  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 800      |
+| mean 100 episode reward | 20       |
+| steps                   | 1373131  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 900      |
+| mean 100 episode reward | 20.2     |
+| steps                   | 1543629  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1000     |
+| mean 100 episode reward | 20.4     |
+| steps                   | 1712311  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1100     |
+| mean 100 episode reward | 20.3     |
+| steps                   | 1882770  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1200     |
+| mean 100 episode reward | 20.3     |
+| steps                   | 2052855  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1300     |
+| mean 100 episode reward | 20       |
+| steps                   | 2224539  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1400     |
+| mean 100 episode reward | 20.4     |
+| steps                   | 2394379  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1500     |
+| mean 100 episode reward | 20.2     |
+| steps                   | 2567683  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1600     |
+| mean 100 episode reward | 20.3     |
+| steps                   | 2739724  |
+--------------------------------------
+--------------------------------------
+| % time spent exploring  | 1        |
+| episodes                | 1700     |
+| mean 100 episode reward | 20.3     |
+| steps                   | 2914506  |
+--------------------------------------
+Restored model with mean reward: 20.4
