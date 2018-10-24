@@ -51,11 +51,11 @@ def baselineGraph(name, size, avg):
     plt.xlabel('Episodes * '+str(avg))
     plt.title(name)
     #plt.show()
-    plt.savefig("graphs/"+name+".png")
+    plt.savefig("graphs/"+str(avg)+"/"+name+".png")
     plt.close()
 
 sizes = [1000, 10000, 100000]
 #for size in sizes:
 names = ["Assault", "Atlantis", "BeamRider","CrazyClimber", "DemonAttack", "Gopher", "Kangaroo", "KungFuMaster", "Pong", "RoadRunner", "SpaceInvaders", "StarGunner", "VideoPinball"]
 for name in names:
-    baselineGraph(name, None, 100)
+    baselineGraph(name, None, 50)
